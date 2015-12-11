@@ -1,5 +1,8 @@
 
+
 CREATE SCHEMA common;
+
+DROP IF EXISTS TABLE  common.dictionary;
 
 CREATE TABLE common.dictionary
 (
@@ -9,7 +12,7 @@ CREATE TABLE common.dictionary
   deleteddate timestamp with time zone,
   code varchar(16) not null,
   category varchar(32) not null,
-  value varchar(256)
+  value varchar(256),
   CONSTRAINT dictionary_pkey PRIMARY KEY (id)
 )
 WITH (

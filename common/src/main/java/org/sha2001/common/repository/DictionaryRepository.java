@@ -1,4 +1,4 @@
-package repository;
+package org.sha2001.common.repository;
 
 import org.sha2001.common.domain.Dictionary;
 import org.springframework.data.repository.CrudRepository;

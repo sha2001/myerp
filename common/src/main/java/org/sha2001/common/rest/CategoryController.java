@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import repository.DictionaryRepository;
+import org.sha2001.common.repository.DictionaryRepository;
 
 import java.util.List;
 
@@ -34,6 +34,7 @@ public class CategoryController {
     
     @RequestMapping(path="/items",method=RequestMethod.POST)
     void saveItem(@RequestBody Dictionary item) {
+        dictionaryRepository.save(item);
     	
     }
 }
