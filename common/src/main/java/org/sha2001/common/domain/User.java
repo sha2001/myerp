@@ -4,9 +4,11 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name="userinfo", schema = "common")
@@ -20,5 +22,7 @@ public class User extends IdentifiedObject implements Serializable {
     Date lastLogin;
     Date activeFrom;
     Date activeTo;
+    @OneToMany(mappedBy="user")
+    List<Role> roles;
 
 }

@@ -16,7 +16,7 @@ import javax.websocket.server.PathParam;
 
 @RestController
 @EnableAutoConfiguration
-@RequestMapping("dictionary")
+@RequestMapping("api/dictionary")
 public class CategoryController {
 
 	@Autowired
