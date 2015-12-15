@@ -16,9 +16,6 @@ import lombok.Setter;
 @Setter
 public class Role extends IdentifiedObject implements Serializable {
 	
-	@ManyToOne
-	@JoinColumn(name="userid")
-	private User user;
 	private String role;
 	
 }
