@@ -21,19 +21,13 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
 
 	@Autowired
 	private UserRepository userRepository; 
-	
-	public CustomAuthenticationSuccessHandler() {
-		// TODO Auto-generated constructor stub
-	}
 
 	@Override
 	public void onAuthenticationSuccess(HttpServletRequest arg0, HttpServletResponse arg1, Authentication arg2)
 			throws IOException, ServletException {
 		
-		Object object = SecurityContextHolder.getContext().getAuthentication().getPrincipal(); 
-		System.out.println(object.getClass().getName());
-		User authUser = (User) object;  
-       
+		Object object = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		User authUser = (User) object;
 		
 		userRepository.updateLastLogin(authUser.getUsername());
 		

@@ -1,9 +1,25 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
-    <head>
-        <title>Spring Security Example</title>
-    </head>
-    <body>
-        <h1>Dictionary!</h1>
-    </body>
+<html ng-app="dictionayApp" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Spring Security Example</title>
+    <link rel='stylesheet' href='/webjars/bootstrap/3.3.4/css/bootstrap.min.css'></link>
+    <script type="text/javascript" src="/webjars/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/angularjs/1.4.8/angular.min.js"></script>
+    <script type="text/javascript" src="/webjars/angularjs/1.4.8/angular-route.min.js"></script>
+    <script type="text/javascript" src="/js/dictionaryCtrl.js"></script>
+</head>
+<body ng-controller="dictionaryCtrl">
+
+<p>Nothing here {{'yet' + '!'}}</p>
+
+<div>
+    <h1>Dictionary!</h1>
+    <li ng-repeate="item in items">
+        {{item.code}}
+        {{item.category}}
+        {{item.value}}
+    </li>
+</div>
+</body>
 </html>
