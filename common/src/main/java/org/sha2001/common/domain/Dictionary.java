@@ -15,7 +15,9 @@ import java.io.Serializable;
 @Getter
 public class Dictionary extends IdentifiedObject implements Serializable {
 
-    @Column(unique = true)
+  
+	private static final long serialVersionUID = -3750601810062958323L;
+	@Column(unique = true)
     @NotNull
     String code;
     @NotNull
