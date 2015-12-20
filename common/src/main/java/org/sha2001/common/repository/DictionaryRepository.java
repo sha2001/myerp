@@ -1,6 +1,7 @@
 package org.sha2001.common.repository;
 
 import org.sha2001.common.domain.Dictionary;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -12,6 +13,8 @@ import javax.transaction.Transactional;
 @Repository
 @Transactional
 public interface DictionaryRepository extends CrudRepository<Dictionary, UUID> {
-
     List<Dictionary> findByCategory(String category);
+    
+    @Query("select distinct d.category from Dictionary d")
+    List<String> getCategories();
 }

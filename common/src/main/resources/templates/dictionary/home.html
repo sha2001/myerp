@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="dictionayApp" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<html ng-app="dictionayApp" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Spring Security Example</title>
     <link rel='stylesheet' href='/webjars/bootstrap/3.3.4/css/bootstrap.min.css'></link>
@@ -15,11 +14,20 @@
 
 <div>
     <h1>Dictionary!</h1>
-    <li ng-repeate="item in items">
-        {{item.code}}
-        {{item.category}}
-        {{item.value}}
-    </li>
+    Search : <input ng-model="query"/>
+    <table>
+        <tr>
+            <th>Code</th>
+            <th>Category</th>
+            <th>Value</th>
+            <th>Actions</th>
+        </tr>
+    <tr ng-repeat="dictionary in items | filter:query">
+       <td> {{dictionary.code}}</td>
+       <td> {{dictionary.category}}</td>
+       <td> {{dictionary.value}}</td>
+    </tr>
+    </table>
 </div>
 </body>
 </html>
