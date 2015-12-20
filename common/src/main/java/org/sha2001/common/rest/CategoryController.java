@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.google.common.collect.Lists;
+
 import org.sha2001.common.repository.DictionaryRepository;
 
 import java.util.List;
-
-import javax.websocket.server.PathParam;
 
 @RestController
 @EnableAutoConfiguration
@@ -35,12 +35,11 @@ public class CategoryController {
     
     @RequestMapping(path="/",method=RequestMethod.POST)
     void saveItem(@RequestBody Dictionary item) {
-        dictionaryRepository.save(item);
-    	
+        dictionaryRepository.save(item);	
     }
     
-    @RequestMapping("/test")
-    public String getTest() {   
-        return "test";
+    @RequestMapping(path="/categories")
+    public List<String> getCategories() {    	
+    	return dictionaryRepository.getCategories();
     }
 }
