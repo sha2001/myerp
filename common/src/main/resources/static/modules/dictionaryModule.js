@@ -1,0 +1,1 @@
+angular.module('dictionary.module',['commonApp.dictionary.controllers','commonApp.login.directives']);
