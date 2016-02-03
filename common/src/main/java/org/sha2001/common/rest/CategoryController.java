@@ -10,6 +10,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.google.common.collect.Lists;
+
+import org.sha2001.common.repository.DictionaryRepository;
+
 import java.util.List;
 
 @RestController
@@ -32,11 +36,11 @@ public class CategoryController {
     
     @RequestMapping(path="/",method=RequestMethod.POST)
     void saveItem(@RequestBody Dictionary item) {
-        dictionaryRepository.save(item);	
+        dictionaryRepository.save(item);
     }
     
     @RequestMapping(path="/categories")
-    public List<String> getCategories() {    	
+    public List<String> getCategories() {
     	return dictionaryRepository.getCategories();
     }
 }
